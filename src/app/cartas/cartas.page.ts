@@ -53,12 +53,14 @@ export class CartasPage {
       console.log(this.datos.getMazoSeleccionado)
       console.log(res)
       this.storage.guardarMazo(this.datos.getMazoSeleccionado, res);
+      this.pregunta = "";
+      this.respuesta = "";
     })
   }
 
   async eliminarCarta(cartaSeleccionada:number){
     await this.storage.obtenerMazo(this.datos.getMazoSeleccionado).then((res:any)=>{
-      res.splice(cartaSeleccionada)
+      res.splice(cartaSeleccionada,1)
       console.log(this.datos.getMazoSeleccionado)
       console.log(res)
       this.storage.guardarMazo(this.datos.getMazoSeleccionado, res);

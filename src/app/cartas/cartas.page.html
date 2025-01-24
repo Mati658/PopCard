@@ -6,9 +6,9 @@
     @for (item of cartas; track $index) {
         <div class="card">
           <div class="title">
-            <span id="{{item}}" (click)="cartaEliminar = $index">
+            <span id="{{$index}}" (click)="cartaEliminar = $index">
               <ion-alert
-                trigger="{{item}}"
+                trigger="{{$index}}"
                 header="¿Desea eliminar la carta?"
                 [buttons]="alertButtons"
             ></ion-alert>
@@ -31,14 +31,14 @@
     </div>
       <ion-modal #modal trigger="open-modal2">
         <ng-template>
-          <ion-content>
-            <ion-toolbar>
+          <div>
+            <ion-toolbar >
               <ion-title>Mazo de Cartas</ion-title>
               <ion-buttons slot="end">
                 <ion-button color="light" (click)="modal.dismiss();">Volver</ion-button>
               </ion-buttons>
             </ion-toolbar>
-          </ion-content>
+          </div>
 
           <div class="custom_input">
             <form [formGroup]="formGroup">
