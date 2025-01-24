@@ -3,21 +3,20 @@
 
     <span style="margin-top: 5%;"></span>
 
-    @for (item of mazos; track $index) {
-        <div class="card" (click)="enviarMazo(item); router('cartas')">
-          <div class="title">
-              <span>
-                  
-              </span>
+      @for (item of mazos; track $index) {
+          <div class="card" (click)="enviarMazo(item); router('cartas')">
+            <div class="title">
+                <span>
+                    
+                </span>
+            </div>
+            <div class="data">
+                <p>
+                    {{item}} 
+                </p>
+            </div>
           </div>
-          <div class="data">
-              <p>
-                  {{item}} 
-              </p>
-          </div>
-        </div>
-      }
-
+        }
 
 
     <!-- modal -->

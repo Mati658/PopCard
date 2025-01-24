@@ -14,7 +14,6 @@ export class DatosService {
     this.mazoSeleccionado = v;
   }
   
-  
   public get getMazoSeleccionado() : string {
     return this.mazoSeleccionado;
   }

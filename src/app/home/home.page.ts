@@ -35,6 +35,12 @@ export class HomePage {
       console.log(mazos);
       this.mazos = mazos;
     })
+
+    this.storage.obtenerTodosMazos().then((mazos:any)=>{
+      console.log(mazos);
+      // this.mazos = mazos;
+    })
+
   }
 
   async crearMazo(){ //creo el mazo vacío
@@ -49,7 +55,7 @@ export class HomePage {
   }
 
   router(path:string){
-    this.navCtlr.navigateRoot(path);
+    this.navCtlr.navigateForward(path);
   }
 
 }

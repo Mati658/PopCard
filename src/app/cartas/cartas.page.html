@@ -22,9 +22,9 @@
 
     <!-- modal -->
     <div class="btn-container">
-      <button id="open-modal" expand="block" class="btn" shape="round">+</button>
+      <button id="open-modal2" expand="block" class="btn" shape="round">+</button>
     </div>
-      <ion-modal #modal trigger="open-modal">
+      <ion-modal #modal trigger="open-modal2">
         <ng-template>
           <ion-content>
             <ion-toolbar>
@@ -35,14 +35,12 @@
             </ion-toolbar>
           </ion-content>
 
-          <ion-content class="mazo-title no-scroll">
-            <div class="custom_input">
-              <form [formGroup]="formGroup">
-                <input  formControlName="pregunta" [(ngModel)]="pregunta" class="input" type="text" placeholder="Nombre del mazo">
-                <input  formControlName="respuesta" [(ngModel)]="respuesta" class="input" type="text" placeholder="Nombre del mazo">
-              </form>
-            </div>
-          </ion-content>
+          <div class="custom_input">
+            <form [formGroup]="formGroup">
+              <textarea  formControlName="pregunta" [(ngModel)]="pregunta" class="input" type="text" placeholder="Pregunta"></textarea>
+              <textarea  formControlName="respuesta" [(ngModel)]="respuesta" class="input" type="text" placeholder="Respuesta"></textarea>
+            </form>
+          </div>
 
           <ion-button class="btn-foto" shape="round" (click)="aniadirCartas(); modal.dismiss();">
             Añadir

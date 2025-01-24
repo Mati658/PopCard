@@ -42,10 +42,11 @@ export class CartasPage {
   }
 
   aniadirCartas(){ //añado las cartas al carta seleccionado
-    this.storage.obtenerMazo(this.cartaSeleccionada).then((res:any)=>{
+    this.storage.obtenerMazo(this.datos.getMazoSeleccionado).then((res:any)=>{
       res.push({question:this.pregunta, res:this.respuesta})
+      console.log(this.datos.getMazoSeleccionado)
       console.log(res)
-      this.storage.guardarMazo(this.cartaSeleccionada, res);
+      this.storage.guardarMazo(this.datos.getMazoSeleccionado, res);
     })
   }
 
