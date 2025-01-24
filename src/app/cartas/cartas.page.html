@@ -1,0 +1,57 @@
+<ion-content [fullscreen]="true">
+  <div class="fondo">
+
+    <span style="margin-top: 5%;"></span>
+
+    @for (item of cartas; track $index) {
+        <div class="card">
+          <div class="title">
+              <span>
+                  
+              </span>
+          </div>
+          <div class="data">
+              <p>
+                  {{item}} 
+              </p>
+          </div>
+        </div>
+      }
+
+
+
+    <!-- modal -->
+    <div class="btn-container">
+      <button id="open-modal" expand="block" class="btn" shape="round">+</button>
+    </div>
+      <ion-modal #modal trigger="open-modal">
+        <ng-template>
+          <ion-content>
+            <ion-toolbar>
+              <ion-title>Mazo de Cartas</ion-title>
+              <ion-buttons slot="end">
+                <ion-button color="light" (click)="modal.dismiss();">Volver</ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-content>
+
+          <ion-content class="mazo-title no-scroll">
+            <div class="custom_input">
+              <form [formGroup]="formGroup">
+                <input  formControlName="pregunta" [(ngModel)]="pregunta" class="input" type="text" placeholder="Nombre del mazo">
+                <input  formControlName="respuesta" [(ngModel)]="respuesta" class="input" type="text" placeholder="Nombre del mazo">
+              </form>
+            </div>
+          </ion-content>
+
+          <ion-button class="btn-foto" shape="round" (click)="aniadirCartas(); modal.dismiss();">
+            Añadir
+          </ion-button>
+        </ng-template>
+      </ion-modal>
+    <!-- modal -->
+
+
+  </div>
+
+</ion-content>

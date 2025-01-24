@@ -1,20 +1,56 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="fondo">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <span style="margin-top: 5%;"></span>
+
+    @for (item of mazos; track $index) {
+        <div class="card" (click)="enviarMazo(item); router('cartas')">
+          <div class="title">
+              <span>
+                  
+              </span>
+          </div>
+          <div class="data">
+              <p>
+                  {{item}} 
+              </p>
+          </div>
+        </div>
+      }
+
+
+
+    <!-- modal -->
+    <div class="btn-container">
+      <button id="open-modal" expand="block" class="btn" shape="round">+</button>
+    </div>
+      <ion-modal #modal trigger="open-modal">
+        <ng-template>
+          <ion-content>
+            <ion-toolbar>
+              <ion-title>Mazo de Cartas</ion-title>
+              <ion-buttons slot="end">
+                <ion-button color="light" (click)="modal.dismiss();">Volver</ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-content>
+
+          <ion-content class="mazo-title no-scroll">
+            <div class="custom_input">
+              <form [formGroup]="formGroup">
+                <input  formControlName="titulo" [(ngModel)]="mazo" class="input" type="text" placeholder="Nombre del mazo">
+              </form>
+            </div>
+          </ion-content>
+
+          <ion-button class="btn-foto" shape="round" (click)="crearMazo(); modal.dismiss();">
+            Añadir
+          </ion-button>
+        </ng-template>
+      </ion-modal>
+    <!-- modal -->
+
+
   </div>
+
 </ion-content>

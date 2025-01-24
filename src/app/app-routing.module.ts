@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'cartas',
+    loadChildren: () => import('./cartas/cartas.module').then( m => m.CartasPageModule)
+  },
 ];
 
 @NgModule({
