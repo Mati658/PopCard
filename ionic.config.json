@@ -1,0 +1,7 @@
+{
+  "name": "PopCard",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
