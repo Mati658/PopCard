@@ -5,7 +5,8 @@
   .fondo{
     background: #CF27AA;
     background: linear-gradient(to top, #CF27AA 0%, #54B8CF 100%);
-    height: 100%;
+    min-height: 100%;
+    height: fit-content;
     width: 100%;
     align-items: center;
     display: flex;

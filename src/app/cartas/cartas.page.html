@@ -6,13 +6,18 @@
     @for (item of cartas; track $index) {
         <div class="card">
           <div class="title">
-              <span>
-                  
-              </span>
+            <span id="{{item}}" (click)="cartaEliminar = $index">
+              <ion-alert
+                trigger="{{item}}"
+                header="¿Desea eliminar la carta?"
+                [buttons]="alertButtons"
+            ></ion-alert>
+            </span>
           </div>
           <div class="data">
               <p>
-                  {{item}} 
+                Question: {{item.question}} <br>
+                Respuesta: {{item.res}}
               </p>
           </div>
         </div>

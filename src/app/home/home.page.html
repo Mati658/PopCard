@@ -4,13 +4,17 @@
     <span style="margin-top: 5%;"></span>
 
       @for (item of mazos; track $index) {
-          <div class="card" (click)="enviarMazo(item); router('cartas')">
+          <div class="card">
             <div class="title">
-                <span>
-                    
+                <span id="{{item}}" (click)="mazoEliminar = item">
+                  <ion-alert
+                    trigger="{{item}}"
+                    header="¿Desea eliminar el mazo?"
+                    [buttons]="alertButtons"
+                ></ion-alert>
                 </span>
             </div>
-            <div class="data">
+            <div class="data" (click)="enviarMazo(item); router('cartas')">
                 <p>
                     {{item}} 
                 </p>
